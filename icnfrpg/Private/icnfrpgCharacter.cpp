@@ -42,5 +42,8 @@ void AicnfrpgCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AicnfrpgCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AicnfrpgCharacter::MoveRight);
+
+	PlayerInputComponent->BindAxis("LookUp", this, &AicnfrpgCharacter::AddControllerPitchInput);
+	PlayerInputComponent->BindAxis("Turn", this, &AicnfrpgCharacter::AddControllerYawInput);
 }
 
