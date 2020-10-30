@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "icnfrpgCharacter.generated.h"
 
+class UCameraComponent;
+class USpringArmComponent;
+
 UCLASS()
 class ICNFRPG_API AicnfrpgCharacter : public ACharacter
 {
@@ -24,6 +27,12 @@ protected:
 
 	// Move the character right (value = 1) or left (value = -1)
 	void MoveRight(float Value);
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UCameraComponent* CameraComp;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	USpringArmComponent* SpringArmComp;
 
 public:	
 	// Called every frame
